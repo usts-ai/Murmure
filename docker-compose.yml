@@ -1,13 +1,13 @@
 version: '3.8'
 
 services:
-  web:
+  # murmure service - Frontend React
+  murmure:
     build:
-      context: .
+      context: ./
       dockerfile: Dockerfile
+    ports:
+      - "3000"
     environment:
       - NODE_ENV=production
-    # For local testing uncomment ports. Coolify does not require ports here.
-    # ports:
-    #   - "3000:80"
     restart: unless-stopped
